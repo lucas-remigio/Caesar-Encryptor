@@ -1,39 +1,31 @@
 import string
 
-# Listing the alphabets for encryption
-# There are 26 letters, from index 0 to 25
-lower_alphabet = list(string.ascii_lowercase)
-upper_alphabet = list(string.ascii_uppercase)
+low_alpha = list(string.ascii_lowercase)                        # Listing the alphabets
+upp_alpha = list(string.ascii_uppercase)                        # There are 26 letters, index 0 => 25
 
-# Getting the key input
 key = 0
-while key <= 0:
+while key <= 0:                                                 # Getting the key input
     key = int(input("Enter the caesar key: "))
 
-# Getting the text to encrypt
-text = str(input("Enter the plane text to encrypt: "))
+text = str(input("Enter the plane text to encrypt: "))          # Getting the text to encrypt
+
 
 # Encryption
+
 for letter in text:
-    # Check if letter is lower
-    if letter in lower_alphabet:
-        # Applying the key
-        enc_letter = lower_alphabet.index(letter) + key
-        # Cycling the key
-        if enc_letter > 25:
-            enc_letter = 0 + (enc_letter - 26)
-            print(lower_alphabet[enc_letter], end="")
-        elif 0 <= enc_letter <= 25:
-            print(lower_alphabet[enc_letter], end="")
-    elif letter in upper_alphabet:
-        # Applying the key
-        enc_letter = upper_alphabet.index(letter) + key
-        # Cycling the key
-        if enc_letter > 25:
-            enc_letter = 0 + (enc_letter - 26)
-            print(upper_alphabet[enc_letter], end="")
-        elif 0 <= enc_letter <= 25:
-            print(upper_alphabet[enc_letter], end="")
-    # Printing anything thats not a letter normally
+    if letter in low_alpha:                                     # Check if letter is lower
+        enc_l = low_alpha.index(letter) + key                   # Applying the key
+        if enc_l > 25:                                          # Cycling the key
+            enc_l = 0 + (enc_l - 26)
+            print(low_alpha[enc_l], end="")
+        elif 0 <= enc_l <= 25:
+            print(low_alpha[enc_l], end="")
+    elif letter in upp_alpha:                                   # Check if letter is upper
+        enc_l = upp_alpha.index(letter) + key                   # Applying the key
+        if enc_l > 25:                                          # Cycling the key
+            enc_l = 0 + (enc_l - 26)
+            print(upp_alpha[enc_l], end="")
+        elif 0 <= enc_l <= 25:
+            print(upp_alpha[enc_l], end="")
     else:
-        print(letter, end="")
+        print(letter, end="")                                   # Printing anything thats not a letter
